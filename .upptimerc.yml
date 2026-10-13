@@ -23,6 +23,11 @@ sites:
 assignees:
   - hzcheney
 
+# The monitoring token is scoped without repository Administration access,
+# so skip the cosmetic repo topic/homepage updates instead of failing them.
+skipTopicsUpdate: true
+skipHomepageUpdate: true
+
 workflowSchedule:
   uptime: "*/5 * * * *"
 
