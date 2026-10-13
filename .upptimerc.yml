@@ -1,31 +1,40 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: terminuslab-team # GitHub organization where this repository lives
+repo: bankstatement2excel-status # The name of this repository
+user-agent: terminuslab-team
+
+# No repository secrets are used by the checks below (strict allowlist)
+secrets: []
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Secret Site
-    url: $SECRET_SITE
+  - name: API
+    url: https://api.bankstatement2excel.com/api/v1/utils/health-check/
+    expectedStatusCodes:
+      - 200
+    __dangerous__body_down_if_text_missing: "true"
+  - name: Website
+    url: https://bankstatement2excel.com
+    expectedStatusCodes:
+      - 200
+  - name: Converter
+    url: https://bankstatement2excel.com/converter
+    expectedStatusCodes:
+      - 200
+
+assignees:
+  - hzcheney
+
+workflowSchedule:
+  uptime: "*/5 * * * *"
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  baseUrl: /bankstatement2excel-status
+  name: BankStatement2Excel Status
+  introTitle: "**BankStatement2Excel** service status"
+  introMessage: Live availability and response times for the BankStatement2Excel website, converter and API.
   navbar:
     - title: Status
       href: /
+    - title: BankStatement2Excel
+      href: https://bankstatement2excel.com
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
-
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
