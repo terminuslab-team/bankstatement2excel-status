@@ -1,7 +1,7 @@
 url: https://api.bankstatement2excel.com/api/v1/utils/health-check/
 status: up
 code: 200
-responseTime: 461
-lastUpdated: 2026-11-08T02:31:16.238Z
+responseTime: 352
+lastUpdated: 2026-11-09T02:41:39.161Z
 startTime: 2026-10-13T20:45:55.120Z
 generator: Upptime <https://github.com/upptime/upptime>
